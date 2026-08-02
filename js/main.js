@@ -31,13 +31,14 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // 3. Scroll-reveal animations
-  // Defensive: never leave content hidden. IO reveals elements as they enter
-  // the viewport; a 1.2s safety timeout guarantees everything shows even if the
-  // observer never fires (e.g. some embedded/headless webviews).
+  // Progressive enhancement: content is visible by default (see styles.css).
+  // Only when IntersectionObserver is supported do we enable the hidden start
+  // state (via html.js-io) and animate elements in as they enter the viewport.
+  // A 1.2s safety timeout guarantees nothing stays hidden if the observer
+  // fails to fire (e.g. some embedded/headless webviews).
   var reveals = document.querySelectorAll('.reveal');
-  reveals.forEach(function (el) { el.classList.add('is-visible'); });
   if ('IntersectionObserver' in window && reveals.length) {
-    reveals.forEach(function (el) { el.classList.remove('is-visible'); });
+    document.documentElement.classList.add('js-io');
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {

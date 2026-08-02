@@ -77,6 +77,6 @@ docs/superpowers/         (design spec + implementation plan)
 ## Tech notes
 
 - **Progressive enhancement:** the site is fully usable with JavaScript disabled — every link, contact method and all text works. `js/main.js` only adds polish: a mobile menu toggle, a sticky-header shadow on scroll, scroll-reveal animations, and the footer copyright year.
-- **Scroll-reveal safety:** reveal elements are force-shown by a 1.2s timeout in case an embedded webview's `IntersectionObserver` does not fire, so content is never permanently hidden.
+- **Scroll-reveal safety:** reveal content is visible by default in CSS. JavaScript only enables the hidden start state (via `html.js-io`) when `IntersectionObserver` is confirmed supported, and a 1.2s timeout force-reveals everything as a backstop — so content is never permanently hidden regardless of observer behavior.
 - **Responsive:** mobile-first; grids reflow at 768px and 1024px.
 - **Accessibility:** semantic HTML5 landmarks, per-section headings, keyboard-reachable controls, WCAG-AA color contrast.

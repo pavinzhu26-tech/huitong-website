@@ -104,9 +104,14 @@ ul{list-style:none}
 .footer__bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:1.5rem;
   text-align:center;font-size:.85rem;color:rgba(255,255,255,.5)}
 
-/* ---------- Scroll reveal (progressively enhanced) ---------- */
-.reveal{opacity:0;transform:translateY(24px);transition:.6s}
-.reveal.is-visible{opacity:1;transform:none}
+/* ---------- Scroll reveal (progressively enhanced) ----------
+   Content is visible by default. Only when JS confirms IntersectionObserver
+   support does it add .js-io to <html>, which enables the hidden start
+   state. This guarantees content is never permanently hidden by a missing/
+   late observer. */
+.reveal{transition:opacity .6s,transform .6s}
+html.js-io .reveal{opacity:0;transform:translateY(24px)}
+.reveal.is-visible,html.js-io .reveal.is-visible{opacity:1;transform:none}
 
 /* ---------- Hero ---------- */
 .hero{background:linear-gradient(135deg,#0A2540 0%,#1E5F8E 100%);color:var(--white);
