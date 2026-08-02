@@ -31,8 +31,13 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // 3. Scroll-reveal animations
+  // Defensive: never leave content hidden. IO reveals elements as they enter
+  // the viewport; a 1.2s safety timeout guarantees everything shows even if the
+  // observer never fires (e.g. some embedded/headless webviews).
   var reveals = document.querySelectorAll('.reveal');
+  reveals.forEach(function (el) { el.classList.add('is-visible'); });
   if ('IntersectionObserver' in window && reveals.length) {
+    reveals.forEach(function (el) { el.classList.remove('is-visible'); });
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -42,9 +47,9 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(function (el) { io.observe(el); });
-  } else {
-    // Fallback: just show everything
-    reveals.forEach(function (el) { el.classList.add('is-visible'); });
+    setTimeout(function () {
+      reveals.forEach(function (el) { el.classList.add('is-visible'); });
+    }, 1200);
   }
 
   // 4. Footer year
