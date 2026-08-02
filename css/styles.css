@@ -1,0 +1,129 @@
+/* ============================================================
+   HUICHANG — styles.css
+   Design tokens, base, layout, components, responsive.
+   Mobile-first. Site is fully functional without JS.
+   ============================================================ */
+
+/* ---------- Design tokens ---------- */
+:root{
+  --navy:#0A2540; --blue:#1E5F8E; --amber:#F59E0B;
+  --bg:#F8FAFC; --text:#1F2937; --white:#FFFFFF;
+  --muted:#64748B; --border:#E2E8F0;
+  --maxw:1200px; --radius:12px;
+  --shadow:0 4px 20px rgba(10,37,64,.08);
+  --shadow-hover:0 8px 30px rgba(10,37,64,.15);
+  --font-head:'Poppins',system-ui,sans-serif;
+  --font-body:'Inter',system-ui,sans-serif;
+}
+
+/* ---------- Reset / base ---------- */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:var(--font-body);color:var(--text);background:var(--white);
+  line-height:1.65;font-size:1rem;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--font-head);line-height:1.2;color:var(--navy);font-weight:700}
+h1{font-size:clamp(2rem,5vw,3.4rem)}
+h2{font-size:clamp(1.6rem,3.5vw,2.4rem)}
+h3{font-size:1.25rem}
+p{color:var(--text)}
+a{color:var(--blue);text-decoration:none}
+a:hover{color:var(--navy)}
+img{max-width:100%;display:block}
+ul{list-style:none}
+
+/* ---------- Layout ---------- */
+.container{max-width:var(--maxw);margin:0 auto;padding:0 1.5rem}
+.section{padding:5rem 0}
+.section--alt{background:var(--bg)}
+.section__head{max-width:720px;margin:0 auto 3rem;text-align:center}
+.eyebrow{display:inline-block;font-family:var(--font-head);font-weight:600;
+  font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:.75rem}
+.section__title{margin-bottom:1rem}
+.section__lead{color:var(--muted);font-size:1.1rem}
+
+/* ---------- Grids ---------- */
+.grid{display:grid;gap:2rem}
+.grid--2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.grid--3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.grid--4{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.grid--5{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-head);
+  font-weight:600;font-size:1rem;padding:.85rem 1.6rem;border-radius:50px;
+  border:2px solid transparent;cursor:pointer;transition:.25s;text-align:center}
+.btn--primary{background:var(--amber);color:var(--navy)}
+.btn--primary:hover{background:#E8920A;color:var(--navy);transform:translateY(-2px)}
+.btn--ghost{background:transparent;color:var(--white);border-color:rgba(255,255,255,.6)}
+.btn--ghost:hover{background:rgba(255,255,255,.1);color:var(--white)}
+.btn--outline{background:transparent;color:var(--navy);border-color:var(--navy)}
+.btn--outline:hover{background:var(--navy);color:var(--white)}
+
+/* ---------- Cards ---------- */
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow)}
+.card--hover{transition:.3s}
+.card--hover:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover);border-color:var(--blue)}
+
+/* ---------- Stats ---------- */
+.stat{text-align:center}
+.stat__num{font-family:var(--font-head);font-weight:700;font-size:clamp(2.2rem,5vw,3.2rem);
+  color:var(--amber);line-height:1}
+.stat__label{color:var(--muted);margin-top:.5rem;font-size:.95rem}
+
+/* ---------- Badge ---------- */
+.badge{position:absolute;top:.75rem;left:.75rem;background:var(--amber);color:var(--navy);
+  font-family:var(--font-head);font-weight:600;font-size:.7rem;letter-spacing:.08em;
+  text-transform:uppercase;padding:.25rem .6rem;border-radius:50px}
+
+/* ---------- Header / nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,37,64,.95);
+  backdrop-filter:blur(8px);transition:.3s}
+.nav--scrolled{background:var(--navy);box-shadow:0 2px 20px rgba(0,0,0,.2)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;
+  max-width:var(--maxw);margin:0 auto;padding:0 1.5rem;height:72px}
+.nav__logo{height:34px}
+.nav__links{display:flex;align-items:center;gap:2rem}
+.nav__link{color:rgba(255,255,255,.85);font-weight:500}
+.nav__link:hover{color:var(--white)}
+.nav__link[aria-current="page"]{color:var(--amber)}
+.nav__cta{background:var(--amber);color:var(--navy);padding:.55rem 1.2rem;border-radius:50px;
+  font-family:var(--font-head);font-weight:600}
+.nav__cta:hover{background:#E8920A;color:var(--navy)}
+.nav__toggle{display:none;background:none;border:none;cursor:pointer;
+  flex-direction:column;gap:5px;padding:8px}
+.nav__toggle span{width:24px;height:2px;background:var(--white);transition:.3s}
+
+/* ---------- Footer ---------- */
+.footer{background:var(--navy);color:rgba(255,255,255,.75);padding:4rem 0 2rem}
+.footer h4{color:var(--white);margin-bottom:1rem;font-size:1rem}
+.footer a{color:rgba(255,255,255,.75)}
+.footer a:hover{color:var(--amber)}
+.footer__grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  margin-bottom:2.5rem}
+.footer__bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:1.5rem;
+  text-align:center;font-size:.85rem;color:rgba(255,255,255,.5)}
+
+/* ---------- Scroll reveal (progressively enhanced) ---------- */
+.reveal{opacity:0;transform:translateY(24px);transition:.6s}
+.reveal.is-visible{opacity:1;transform:none}
+
+/* ---------- Hero ---------- */
+.hero{background:linear-gradient(135deg,#0A2540 0%,#1E5F8E 100%);color:var(--white);
+  padding:9rem 0 6rem;position:relative;overflow:hidden}
+.hero h1{color:var(--white);max-width:18ch}
+.hero__lead{font-size:1.25rem;color:rgba(255,255,255,.85);max-width:60ch;margin:1.5rem 0 2.5rem}
+.hero__actions{display:flex;flex-wrap:wrap;gap:1rem}
+
+/* ---------- Responsive ---------- */
+@media (max-width:768px){
+  .nav__links{position:fixed;inset:72px 0 auto 0;background:var(--navy);
+    flex-direction:column;padding:2rem 1.5rem;gap:1.5rem;
+    transform:translateY(-150%);transition:.3s}
+  .nav__links.is-open{transform:none}
+  .nav__toggle{display:flex}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
