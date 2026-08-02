@@ -42,11 +42,9 @@ document.addEventListener('DOMContentLoaded', function () {
       gridHtml += '<div class="grid grid--4">';
       sub.skus.forEach(function (sku) {
         var img = sku.img ? ('assets/products/' + FOLDER[cat.id] + '/' + sku.img + '.webp') : '';
-        gridHtml += '<div class="productcard">';
+        gridHtml += '<div class="productcard' + (img ? '' : ' productcard--textonly') + '">';
         if (img) {
           gridHtml += '<img class="productcard__img" src="' + img + '" alt="' + esc(sub.name) + ' ' + esc(sku.model) + '" loading="lazy">';
-        } else {
-          gridHtml += '<div class="productcard__placeholder">' + esc(sku.model) + '</div>';
         }
         gridHtml += '<div class="productcard__model">' + esc(sku.model) + '</div>';
         if (sku.spec) {
