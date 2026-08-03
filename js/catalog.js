@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var navHtml = '<div class="catnav__title">Catalog</div>';
   CATALOG.forEach(function (cat) {
     navHtml += '<div class="catnav__cat">';
-    navHtml += '<div class="catnav__catname"><span class="catnav__num">' + cat.num + '</span>' + esc(cat.name) + '</div>';
+    navHtml += '<a class="catnav__catname" href="#' + cat.id + '"><span class="catnav__num">' + cat.num + '</span>' + esc(cat.name) + '</a>';
     cat.subs.forEach(function (sub) {
       navHtml += '<a class="catnav__sub" href="#' + sub.id + '">' + esc(sub.name) + '</a>';
     });
@@ -31,6 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // ---- Build product grid (grouped by category > sub-category) ----
   var gridHtml = '';
   CATALOG.forEach(function (cat) {
+    // Anchor target so the sidebar category title link (e.g. #public) lands
+    // at the start of this category's first sub-section.
+    gridHtml += '<span id="' + cat.id + '" class="cat-anchor"></span>';
     cat.subs.forEach(function (sub) {
       gridHtml += '<section class="subsection reveal" id="' + sub.id + '">';
       gridHtml += '<div class="subhead">';
