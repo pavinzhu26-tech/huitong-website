@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var FOLDER = {
     'public': 'public-cleaning',
     'house': 'house-cleaning',
-    'hotel': 'hotel-appliance',
     'pest': 'pest-control'
   };
 
