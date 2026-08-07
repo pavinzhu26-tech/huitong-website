@@ -11,9 +11,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Map category id -> folder name for product images
   var FOLDER = {
+    'house': 'household',
+    'pest': 'pest-control',
+    'garden': 'garden',
+    'homedeco': 'home-deco',
     'public': 'public-cleaning',
-    'house': 'house-cleaning',
-    'pest': 'pest-control'
+    'hotel': 'hotel-products',
+    'cooling': 'cooling-items',
+    'summer': 'summer-water'
   };
 
   // ---- Build sidebar (2-level menu) ----
