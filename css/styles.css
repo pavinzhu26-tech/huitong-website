@@ -128,20 +128,22 @@ html.js-io .reveal{opacity:0;transform:translateY(24px)}
   letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
 .catnav__cat{margin-bottom:1.25rem}
 .catnav__catname{display:flex;align-items:center;gap:.5rem;font-family:var(--font-head);
-  font-weight:700;font-size:1.05rem;color:var(--navy);margin-bottom:.5rem;
+  font-weight:700;font-size:1.25rem;color:var(--navy);margin-bottom:.5rem;
   text-decoration:none}
 .catnav__catname:hover{color:var(--blue)}
 .cat-anchor{display:block;position:relative;top:-96px;visibility:hidden}
-.catnav__num{color:var(--amber);font-size:.9rem}
+.catnav__num{color:var(--amber);font-size:1rem}
 .catnav__sub{display:block;padding:.25rem 0 .25rem 1.5rem;font-size:.85rem;
   color:var(--muted);line-height:1.4}
 .catnav__sub:hover{color:var(--blue)}
 .catnav__sub.active{color:var(--blue);font-weight:600}
 .products-layout{display:grid;grid-template-columns:260px 1fr;gap:2.5rem;align-items:start}
 .subhead{margin-bottom:2rem;padding-bottom:1rem;border-bottom:2px solid var(--border)}
-.subhead__cat{font-family:var(--font-head);font-weight:600;font-size:.8rem;
-  letter-spacing:.1em;text-transform:uppercase;color:var(--amber)}
-.subhead__name{margin:.25rem 0}
+.subhead__cat{font-family:var(--font-head);font-weight:700;
+  font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:.04em;
+  text-transform:uppercase;color:var(--amber)}
+.subhead__name{font-family:var(--font-head);font-weight:600;
+  font-size:clamp(1.05rem,1.8vw,1.3rem);color:var(--navy);margin:.25rem 0}
 .subhead__count{color:var(--muted);font-size:.9rem}
 .productcard{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);
   padding:1.25rem;text-align:center;transition:.25s}
