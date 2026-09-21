@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Products — HUITONG</title>
+<meta name="description" content="Explore HUITONG's full product catalog: household, pest control, garden, home decoration, public cleaning, hotel products, cooling items and summer water — 1800+ SKUs across 54 sub-categories. OEM/ODM welcomed.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index.html" aria-label="HUITONG home"><img src="assets/logo-white.svg" alt="HUITONG" class="nav__logo"></a>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav__links" id="navLinks">
+      <a href="products.html" class="nav__link" aria-current="page">Products</a>
+      <a href="about.html" class="nav__link">About Us</a>
+      <a href="index.html#why" class="nav__link">Why Us</a>
+      <a href="contact.html" class="nav__link">Contact</a>
+      <a href="contact.html" class="nav__cta">Get Quote</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="section" style="padding-top:9rem;padding-bottom:1rem">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow">Full Catalog</span>
+      <h1 class="section__title" style="font-size:clamp(2rem,5vw,3rem)">Products</h1>
+      <p class="section__lead">Eight product lines, 54 sub-categories and 1800+ SKUs. The complete catalog is shown below — contact us for specifications, pricing and OEM options.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:1rem">
+  <div class="container">
+    <div class="products-layout">
+      <!-- 2-level sidebar menu (categories + sub-categories) -->
+      <aside class="catnav" id="catnav"></aside>
+      <!-- Product grid, rendered from assets/products.js + js/catalog.js -->
+      <div id="catalogRoot">
+        <noscript><p style="padding:2rem;text-align:center;color:var(--muted)">Please enable JavaScript to view the full product catalog, or <a href="contact.html">contact us</a> for the PDF catalog.</p></noscript>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="background:var(--navy);color:#fff;text-align:center">
+  <div class="container">
+    <h2 style="color:#fff">Need specifications, pricing or a custom product?</h2>
+    <p style="color:rgba(255,255,255,.8);margin:1rem auto 2rem">We offer OEM/ODM and bespoke specifications across all eight lines.</p>
+    <a href="contact.html" class="btn btn--primary">Contact Us</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <img src="assets/logo-white.svg" alt="HUITONG" class="nav__logo" style="margin-bottom:1rem">
+        <p>Designing, manufacturing and exporting professional cleaning products to 80+ countries since 2003.</p>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul><li><a href="products.html#house">Household</a></li>
+        <li><a href="products.html#pest">Pest Control</a></li>
+        <li><a href="products.html#garden">Garden</a></li>
+        <li><a href="products.html#homedeco">Home Decoration</a></li>
+        <li><a href="products.html#public">Public Cleaning</a></li>
+        <li><a href="products.html#hotel">Hotel Products</a></li>
+        <li><a href="products.html#cooling">Cooling Items</a></li>
+        <li><a href="products.html#summer">Summer Water</a></li></ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul><li><a href="about.html">About Us</a></li>
+        <li><a href="index.html#why">Why Choose Us</a></li>
+        <li><a href="contact.html">Contact</a></li></ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+        <li><a href="mailto:htmh@huitongco.com">htmh@huitongco.com</a></li>
+        <li><a href="tel:+8613816015937">+86 138 1601 5937</a></li>
+        <li><a href="mailto:htwc@huitongco.com">htwc@huitongco.com</a></li>
+        <li><a href="tel:+8618969880515">+86 189 6988 0515</a></li>
+        <li><a href="https://wa.me/8613816015937" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      © <span id="year"></span> Taizhou Huitong Trading Co., Ltd / Ningbo Huichang Imp&amp;Exp Co., Ltd. All rights reserved.<br>
+      <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">浙ICP备2026079391号-1</a>
+    </div>
+  </div>
+</footer>
+<script src="assets/products.js"></script>
+<script src="js/main.js"></script>
+<script src="js/catalog.js"></script>
+</body>
+</html>
