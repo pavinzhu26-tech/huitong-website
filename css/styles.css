@@ -103,7 +103,7 @@ ul{list-style:none}
   margin-bottom:2.5rem}
 .footer__bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:1.5rem;
   text-align:center;font-size:.85rem;color:rgba(255,255,255,.5)}
-.footer__bottom img{display:inline-block;vertical-align:middle;margin-right:.35rem}
+.footer__bottom img{display:inline-block}   /* the img reset above is display:block; the filing badge must sit inline before its number */
 
 /* ---------- Scroll reveal (progressively enhanced) ----------
    Content is visible by default. Only when JS confirms IntersectionObserver
