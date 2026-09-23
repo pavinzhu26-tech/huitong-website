@@ -18,3 +18,6 @@ desktop.ini
 
 # Debug/prototype images
 _proto_*
+
+# 迁移备份（含备案材料与 git bundle）—— 仅本机留存，不进仓库、不上线
+迁移备份/
